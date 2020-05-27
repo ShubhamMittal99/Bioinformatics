@@ -1,3 +1,3 @@
 # Bioinformatics
-### Identification of rare codons: 
+#### Identification of rare codons: 
 RareCodons.py
