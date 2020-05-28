@@ -5,6 +5,8 @@ from requests.exceptions import ConnectionError
 from Bio import SeqIO
 import csv 
 import os
+from datetime import datetime
+
 
 Output = open("PTM.csv", "w",newline='')
 
@@ -19,6 +21,9 @@ string_modif = "var modif"
 
 for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
     ID = str(seq_record.id)
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print(current_time)
     print(ID)
     URL = 'http://yaam.ifc.unam.mx/detalle_final.php?orf=' + ID
 
@@ -42,4 +47,16 @@ for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
                     writer.writerow([ID,str(positions),0,str(modifications)])
                 else:
                     writer.writerow([ID,str(positions),1,str(modifications)])
+
+'''
+temp.write(line.decode('utf-8').encode('cp850','replace').decode('cp850').strip() + "\n")
+
+        req1 = str(search_string_in_file("temporary.txt", "var posit")) 
+        req1 = req1[req1.find('[') : req1.find(']')+1]
+        positions = ast.literal_eval(req1)
+
+        req2 = str(search_string_in_file("temporary.txt", "var modi")) 
+        req2 = req2[req2.find('[') : req2.find(']')+1]
+        modifications = ast.literal_eval(req2)
+'''
 Output.close()
