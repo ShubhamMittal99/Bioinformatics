@@ -22,7 +22,7 @@ string_posit = "var posit"
 string_modif = "var modi"
 
 
-for seq_record in SeqIO.parse("orf_coding_2.fasta", "fasta"):
+for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
     # ID of the gene
     ID = str(seq_record.id)
 
