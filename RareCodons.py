@@ -2,9 +2,6 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 import csv 
 
-#Threshold for the maximum percentage of occurrence for rare codons
-threshold = 0.5 
-
 #Output file in CSV format
 Out = open("Rare.csv", "w",newline='')
 
@@ -18,7 +15,24 @@ writer.writerow(colnames)
 #Data to be given as output to the CSV file
 Data = [[],[],[]]
 
-#parsing the FASTA file containing the gene sequences
+#Dictionary to contain the frequency of the codons in the entire genome 
+OverallFreq={}
+
+#parsing the FASTA file containing the gene sequences and getting the total number of occurrences of each codon
+for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
+    seq = str(seq_record.seq)
+    for n in range(0,len(seq),3):
+        codon = str(seq[n:n+3])
+
+        if codon in OverallFreq:
+            OverallFreq[codon] += 1
+        else:
+            OverallFreq[codon] = 1
+
+totalnum = sum(OverallFreq.values())
+OverallFreq = {k: v*1000/totalnum for k, v in OverallFreq.items()}
+
+#parsing the FASTA file containing the gene sequences and identifying rare codons
 for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
 
     #Dictionary to contain the rarity value(binary) of each codon 
@@ -30,9 +44,6 @@ for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
     #Dictionary to contain ID of the gene
     GeneName = {}
 
-    #Initializing the frequency of each codon as 0
-    Freq = {}
-
     #Converting the parsed sequence to a string
     seq = str(seq_record.seq)
     
@@ -43,23 +54,15 @@ for seq_record in SeqIO.parse("orf_coding.fasta", "fasta"):
         #Increment the frequency of codons and logging the position of the amino acid formed after the translation of a given codon
         if codon in Position:
             Position[codon].append(int(n/3))
-            Freq[codon] += 1
         else:
             Position[codon] = [int(n/3)]
-            Freq[codon] = 1
-    
-    #Total number of codons in the gene        
-    total = sum(Freq.values())
 
-    for key in Freq:
-
-        #Converting frequencies to percentage of occurrence
-        Freq[key] = Freq[key]*100/total
+    for key in Position:
 
         GeneName[key] = str(seq_record.id)
 
-        #Identifying codons having a percentage less than or equal to the threshold, as rare(1)
-        if Freq[key] <= threshold:
+        #Identifying codons having a percentage less than or equal to 10% as rare
+        if OverallFreq[key] <= 10:
             Rarity[key] = 1
         else:
             Rarity[key] = 0
