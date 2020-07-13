@@ -1,0 +1,24 @@
+Amino acid,Amino acid position,Codon
+A,1,GCA
+R,2,CAT
+R,3,ATG
+G,4,TGC
+F,5,GCC
+S,6,CCC
+C,7,CCA
+L,8,CAC
+L,9,ACA
+L,10,CAA
+S,11,AAG
+T,12,AGG
+T,13,GGA
+A,14,GAA
+T,15,AAA
+D,16,AAG
+L,17,AGG
+P,18,GGT
+V,19,GTT
+K,20,TTA
+R,21,TAA
+R,22,AAA
+T,23,AAA
