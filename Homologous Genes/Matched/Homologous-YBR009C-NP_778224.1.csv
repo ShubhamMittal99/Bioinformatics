@@ -1,0 +1,18 @@
+Amino Acid,Human Codons,Yeast Codons
+S,"['CAA', 'CAA']","['TGT', 'CAA', 'AAG', 'TTC', 'AGA', 'AGG']"
+G,"['AAA', 'AAG', 'GTT', 'TTA', 'AAG', 'GAG', 'GTT', 'TTG', 'CGA', 'TAG', 'AGA', 'AAA', 'TAA', 'AAG', 'CTG', 'GCG', 'CGT']","['GTC', 'CCG', 'GGT', 'GTA', 'AGA', 'AGG', 'GTA', 'TAA', 'GTC', 'TGG', 'GGT', 'AAG', 'AGC', 'GCT', 'TAT', 'ATC']"
+R,"['AAA', 'TTG', 'GTT', 'GTC', 'GTC', 'TCT', 'GGT', 'GTA', 'GGC', 'GTA', 'GAA', 'GCC', 'CAA', 'AGT']","['TCC', 'AGG', 'GTG', 'TAA', 'TAA', 'AAA', 'GGT', 'GTG', 'GCC', 'ACA', 'TAA', 'ATC', 'TAA', 'GCC']"
+K,"['AGT', 'TAA', 'AGT', 'GTT', 'TTT', 'TCA', 'AGG', 'AGG', 'CGC', 'CCA', 'GCA']","['CGG', 'TAG', 'GGT', 'AAG', 'TGG', 'TAG', 'TGC', 'AAA', 'CAT', 'TCC', 'CTA']"
+L,"['AGA', 'TGT', 'CTG', 'AAG', 'AAG', 'TTT', 'CGC', 'TGC']","['GAG', 'GTA', 'AAG', 'AGC', 'GAA', 'GAT', 'GGT', 'ACT', 'CAG']"
+A,"['TGT', 'ATG', 'TGG', 'AAG', 'GCG', 'GCG', 'TCG']","['AAA', 'GGT', 'AGG', 'CAG', 'ACA', 'TAC']"
+H,"['TGT', 'GGC']","['GGT', 'AAC']"
+V,"['TTG', 'GAG', 'AAA', 'GGT', 'AGG', 'AGG', 'AAG', 'CCA', 'CAT']","['GTG', 'CAC', 'AGA', 'TCT', 'GAG', 'CAA', 'TAT', 'ATT']"
+D,"['TCT', 'AAA', 'GCC']","['AAA', 'AAG', 'GTA']"
+N,"['CTT', 'TAG']",['AAG']
+I,"['TTC', 'GAT', 'TGT', 'GCA', 'AGG', 'GGA']","['GGT', 'AGG', 'TCT', 'GTA', 'CCA', 'GCG', 'CTA']"
+Q,"['TCG', 'AAA']","['GGT', 'AAG']"
+T,"['ATC', 'GGT', 'GGG', 'GAG', 'CAA', 'AGC', 'GTG']","['CTA', 'AGA', 'ATA', 'CCA', 'AAG', 'CCA']"
+P,['CAT'],['AGG']
+Y,"['GGT', 'GGA', 'ATC', 'GCT']","['CGT', 'GAT', 'TTA', 'AGC']"
+E,"['GTG', 'TGG', 'TTA', 'AGG']","['GTC', 'TCA', 'ATT', 'TAA']"
+F,"['GTT', 'TGC']","['AGA', 'CTA']"
